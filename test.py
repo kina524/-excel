@@ -38,6 +38,13 @@ def plot_data(df):
     plt.xlabel(x)
     plt.ylabel(y)
     plt.legend()
+
+    save_graph = input("Хотите сохранить график? (да/нет): ").strip().lower()
+    if save_graph == "да":
+        filename = input("Введите имя файла для сохранения (например, graph.png): ")
+        plt.savefig(filename)
+        print(f"График сохранен как {filename}")
+    
     plt.show()
 
 def main():
@@ -47,8 +54,6 @@ def main():
         plot_data(df)
     else:
         print("Не удалось загрузить данные для построения графика")
-
-# Путь: C:\Users\user\Desktop\data.xlsx
 
 if __name__ == "__main__":
     main()
