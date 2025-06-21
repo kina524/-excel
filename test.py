@@ -3,7 +3,7 @@ import pandas as pd
 from pathlib import Path
 
 
-def analyze_data_xml(path):
+def analyze_data_excel(path):
     try:
         if not path.exists():
             print("Файл не найден.")
@@ -49,7 +49,7 @@ def plot_data(df):
 
 def main():
     path = Path(input("Путь: "))
-    df = analyze_data_xml(path)
+    df = analyze_data_excel(path)
     if df is not None and not df.empty:
         plot_data(df)
     else:
